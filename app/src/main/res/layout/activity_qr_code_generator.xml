@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_qr_code_generator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.adityakumarsharma.qr_code.qr_code_generator">
+
+    <TextView
+        android:text="Name:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView1"
+
+        tools:textSize="18sp"
+        android:textColor="@android:color/background_dark" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:ems="10"
+        android:id="@+id/editText1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_width="280dp"
+        android:hint="enter the Name"
+        android:textColorHint="@color/zxing_viewfinder_mask"
+        android:textColor="?attr/actionMenuTextColor" />
+
+    <TextView
+        android:text="Age :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/textView2"
+        tools:textSize="18sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/group_age"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textView1"
+        android:layout_toEndOf="@+id/textView1">
+        <RadioButton
+            android:text="Above 40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton4"
+            android:layout_below="@+id/editText1"
+            android:layout_alignParentEnd="true"
+            android:checked="false"
+            />
+
+    <RadioButton
+        android:text="16-40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton3"
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:checked="false"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton2"
+        android:text="10-15"
+        android:layout_alignBaseline="@+id/radioButton3"
+        android:layout_alignBottom="@+id/radioButton3"
+        android:layout_toEndOf="@+id/radioButton3"
+        android:checked="false"/>
+
+    <RadioButton
+        android:text="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton1"
+        android:layout_below="@+id/editText1"
+        android:layout_toEndOf="@+id/radioButton2"
+        android:checked="false"/>
+    </RadioGroup>
+
+    <TextView
+        android:text="Gender :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_age"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView3"
+        tools:textSize="18sp"
+        android:textColor="@android:color/background_dark"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/group_gender"
+        android:layout_marginStart="19dp"
+        android:layout_below="@+id/group_age"
+        android:layout_alignStart="@+id/editText1">
+           <RadioButton
+               android:text="M"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/group_age"
+               android:layout_toEndOf="@+id/textView3"
+               android:id="@+id/radioButton5"
+               android:checked="false"/>
+
+           <RadioButton
+               android:text="F"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/group_age"
+               android:layout_toEndOf="@+id/radioButton5"
+               android:id="@+id/radioButton6"
+               android:checked="false"/>
+
+           <RadioButton
+               android:text="Other"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/group_age"
+               android:layout_toEndOf="@+id/radioButton6"
+               android:id="@+id/radioButton7"
+               android:checked="false"/>
+
+       </RadioGroup>
+
+    <TextView
+        android:text="Training Type :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/group_gender"
+        android:layout_alignParentStart="true"
+        tools:textSize="18sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/group_training"
+        android:layout_below="@+id/group_gender"
+        android:layout_toEndOf="@+id/textView4">
+    <RadioButton
+        android:text="Maui Thai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4"
+        android:id="@+id/radioButton8"
+        android:checked="false"/>
+
+    <RadioButton
+        android:text="Jujutsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/radioButton8"
+        android:layout_toEndOf="@+id/radioButton8"
+        android:id="@+id/radioButton9"
+        android:checked="false"/>
+
+    <RadioButton
+        android:text="Judo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/radioButton9"
+        android:layout_toEndOf="@+id/radioButton9"
+        android:id="@+id/radioButton10"
+        android:checked="false"/>
+
+        <RadioButton
+            android:text="Karate"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:id="@+id/radioButton11"
+            android:layout_below="@+id/group_gender"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/radioButton10"
+            android:checked="false"/>
+    </RadioGroup>
+
+    <TextView
+        android:text="Exercise Type:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_training"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView5"
+        tools:textSize="18sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_toStartOf="@+id/group_gender" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/group_exercise"
+        android:layout_below="@+id/group_training"
+        android:layout_toEndOf="@+id/textView5">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_training"
+        android:layout_toEndOf="@+id/textView5"
+        android:id="@+id/radioButton12"
+        android:text="Cardio"
+        android:checked="false"/>
+
+    <RadioButton
+        android:text="Strength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/radioButton12"
+        android:layout_toEndOf="@+id/radioButton12"
+        android:id="@+id/radioButton13"
+        android:checked="false"/>
+
+    <RadioButton
+        android:text="Muscle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_training"
+        android:layout_toEndOf="@+id/radioButton13"
+        android:id="@+id/radioButton14"
+        android:checked="false"/>
+    </RadioGroup>
+
+    <TextView
+        android:text="Sports :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView6"
+        tools:textSize="18sp"
+        android:textColor="@android:color/background_dark"
+        />
+
+    <CheckBox
+        android:text="Running"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/checkBox1"
+        android:layout_toEndOf="@+id/checkBox1"
+        android:id="@+id/checkBox2" />
+
+    <CheckBox
+        android:text="Swimming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox1"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <CheckBox
+        android:text="Football"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox3"
+        android:layout_alignBaseline="@+id/checkBox2"
+        android:layout_alignBottom="@+id/checkBox2"
+        android:layout_toEndOf="@+id/checkBox2" />
+
+    <CheckBox
+        android:text="Dance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBox4"
+        android:layout_toEndOf="@+id/checkBox4"
+        android:id="@+id/checkBox5" />
+
+    <CheckBox
+        android:text="Rugby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox4"
+        android:layout_below="@+id/checkBox1"
+        android:layout_alignStart="@+id/group_training" />
+
+    <Button
+        android:text="Generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox2"
+        android:id="@+id/button_generate"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/background_dark"
+        android:textColor="@color/zxing_status_text" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="250dp"
+        android:background="@android:color/black"
+        android:id="@+id/vie"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/vie"
+
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@id/image"/>
+    </LinearLayout>
+
+</RelativeLayout>
